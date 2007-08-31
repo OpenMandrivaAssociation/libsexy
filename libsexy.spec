@@ -1,8 +1,9 @@
 %define name libsexy
 %define version 0.1.11
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 2
 %define libname %mklibname sexy %major
+%define develname %mklibname sexy -d
 
 Summary: Collection of widgets for GTK+
 Name: %{name}
@@ -28,12 +29,17 @@ Requires: %mklibname enchant 1
 %description -n %libname
 This is a collection of widgets for GTK+ 2.x.
 
-%package -n %libname-devel
+%package -n %develname
 Group:Development/C
 Summary: Collection of widgets for GTK+
 Requires: %libname = %version
-Provides: libsexy-devel = %version-%release
-%description -n %libname-devel
+Provides: %{mklibname sexy 2 -d} = %version
+Obsoletes: %{mklibname sexy 2 -d}
+%if "%{_lib}" != "lib"
+Provides: %{name}-devel = %version
+%endif
+
+%description -n %develname
 This is a collection of widgets for GTK+ 2.x.
 
 %prep
@@ -51,13 +57,14 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post -n %libname -p /sbin/ldconfig
+
 %postun -n %libname -p /sbin/ldconfig
 
 %files -n %libname
 %defattr(-,root,root)
 %_libdir/*.so.%{major}*
 
-%files -n %libname-devel
+%files -n %develname
 %defattr(-,root,root)
 %doc ChangeLog AUTHORS NEWS
 %_datadir/gtk-doc/html/libsexy
@@ -66,5 +73,3 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/*.a
 %attr(644,root,root) %_libdir/*.la
 %_libdir/pkgconfig/*
-
-
