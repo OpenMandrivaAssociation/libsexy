@@ -1,6 +1,6 @@
 %define name libsexy
 %define version 0.1.11
-%define release %mkrel 2
+%define release %mkrel 3
 %define major 2
 %define libname %mklibname sexy %major
 %define develname %mklibname sexy -d
