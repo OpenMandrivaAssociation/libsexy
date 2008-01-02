@@ -13,6 +13,7 @@ Source0: http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 License: LGPL
 Group: System/Libraries
 Url: http://www.chipx86.com/wiki/Libsexy
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: gtk-doc
 
