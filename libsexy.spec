@@ -1,6 +1,5 @@
 %define name libsexy
 %define version 0.1.11
-%define release %mkrel 4
 %define major 2
 %define libname %mklibname sexy %major
 %define develname %mklibname sexy -d
@@ -8,7 +7,7 @@
 Summary: Collection of widgets for GTK+
 Name: %{name}
 Version: %{version}
-Release: %{release}
+Release: %mkrel 5
 Source0: http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 License: LGPL
 Group: System/Libraries
