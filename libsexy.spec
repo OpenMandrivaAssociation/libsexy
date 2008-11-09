@@ -7,7 +7,7 @@
 Summary: Collection of widgets for GTK+
 Name: %{name}
 Version: %{version}
-Release: %mkrel 6
+Release: %mkrel 7
 Source0: http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 License: LGPL
 Group: System/Libraries
