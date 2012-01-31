@@ -14,6 +14,7 @@ License: LGPL
 Group: System/Libraries
 Url: http://www.chipx86.com/wiki/Libsexy
 BuildRequires: gtk+2-devel
+BuildRequires: glib2-devel
 BuildRequires: gtk-doc
 
 %description
@@ -48,6 +49,7 @@ This is a collection of widgets for GTK+ 2.x.
 %patch2 -p1 -b .gtk-single-include
 
 %build
+export LIBS=`pkg-config --libs gmodule-2.0`
 %configure2_5x
 %make
 
