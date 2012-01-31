@@ -1,18 +1,15 @@
-%define name libsexy
-%define version 0.1.11
 %define major 2
 %define libname %mklibname sexy %major
 %define develname %mklibname sexy -d
 
 Summary: Collection of widgets for GTK+
-Name: %{name}
-Version: %{version}
-Release: %mkrel 12
+Name: libsexy
+Version: 0.1.11
+Release: 13
 Source0: http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 License: LGPL
 Group: System/Libraries
 Url: http://www.chipx86.com/wiki/Libsexy
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: gtk-doc
 
@@ -52,27 +49,15 @@ This is a collection of widgets for GTK+ 2.x.
 rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
+# cleanups
+rm -f %{buildroot}%_libdir/*.*a
 
 %files -n %libname
-%defattr(-,root,root)
 %_libdir/*.so.%{major}*
 
 %files -n %develname
-%defattr(-,root,root)
 %doc ChangeLog AUTHORS NEWS
 %_datadir/gtk-doc/html/libsexy
 %_includedir/*
 %_libdir/*.so
-%_libdir/*.a
-%attr(644,root,root) %_libdir/*.la
 %_libdir/pkgconfig/*
