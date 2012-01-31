@@ -7,6 +7,9 @@ Name: libsexy
 Version: 0.1.11
 Release: 13
 Source0: http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
+Patch0: %{name}-%{version}-url-label.patch
+Patch1: %{name}-icon-name.patch
+Patch2: gtk2-single-include.patch
 License: LGPL
 Group: System/Libraries
 Url: http://www.chipx86.com/wiki/Libsexy
@@ -40,6 +43,9 @@ This is a collection of widgets for GTK+ 2.x.
 
 %prep
 %setup -q
+%patch0 -p1 -b .url-label
+%patch1 -p1 -b .icon-name
+%patch2 -p1 -b .gtk-single-include
 
 %build
 %configure2_5x
