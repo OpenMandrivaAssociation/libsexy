@@ -4,6 +4,7 @@
 
 Summary:	Collection of widgets for GTK+
 
+
 Name:		libsexy
 Version:	0.1.11
 Release:	22
@@ -25,6 +26,7 @@ This is a collection of widgets for GTK+ 2.x.
 %package -n %{libname}
 Summary:	Collection of widgets for GTK+
 
+
 Group:		System/Libraries
 
 %description -n %{libname}
@@ -32,6 +34,7 @@ This is a collection of widgets for GTK+ 2.x.
 
 %package -n %{devname}
 Summary:	Collection of widgets for GTK+
+
 
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
