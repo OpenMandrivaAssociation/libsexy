@@ -3,6 +3,7 @@
 %define devname	%mklibname sexy -d
 
 Summary:	Collection of widgets for GTK+
+
 Name:		libsexy
 Version:	0.1.11
 Release:	22
@@ -23,6 +24,7 @@ This is a collection of widgets for GTK+ 2.x.
 
 %package -n %{libname}
 Summary:	Collection of widgets for GTK+
+
 Group:		System/Libraries
 
 %description -n %{libname}
@@ -30,6 +32,7 @@ This is a collection of widgets for GTK+ 2.x.
 
 %package -n %{devname}
 Summary:	Collection of widgets for GTK+
+
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 %if "%{_lib}" != "lib"
@@ -60,11 +63,5 @@ export LIBS=`pkg-config --libs gmodule-2.0`
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
-
-
-%changelog
-* Fri Dec 06 2013 Bernhard Rosenkraenzer <bero@bero.eu> 0.1.11-22
-+ Revision: f5b3bbe
-- MassBuild#289: Increase release tag
 
 
