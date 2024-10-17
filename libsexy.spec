@@ -8,7 +8,7 @@ Version:	0.1.11
 Release:	29
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.chipx86.com/wiki/Libsexy
+Url:		https://www.chipx86.com/wiki/Libsexy
 Source0:	http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-%{version}-url-label.patch
 Patch1:		%{name}-icon-name.patch
