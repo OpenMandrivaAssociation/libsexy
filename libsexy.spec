@@ -13,6 +13,11 @@ Source0:	http://releases.chipx86.com/libsexy/libsexy/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-%{version}-url-label.patch
 Patch1:		%{name}-icon-name.patch
 Patch2:		gtk2-single-include.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
