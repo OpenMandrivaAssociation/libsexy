@@ -9,7 +9,7 @@
 Summary:	Collection of widgets for GTK+
 Name:		libsexy
 Version:	0.1.11
-Release:	30
+Release:	31
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://www.chipx86.com/wiki/Libsexy
@@ -50,6 +50,9 @@ This is a collection of widgets for GTK+ 2.x.
 
 %prep
 %autosetup -p1
+# The upstream pc file hardcodes ${exec_prefix}/lib, which is the 32-bit
+# directory. pkg-config then adds -L/usr/lib and the link becomes elf32-i386.
+sed -i 's|^libdir=.*|libdir=@libdir@|' libsexy.pc.in
 
 %build
 export LIBS=$(pkg-config --libs gmodule-2.0)
